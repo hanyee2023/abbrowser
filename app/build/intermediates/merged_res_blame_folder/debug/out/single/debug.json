@@ -1,17 +1,5 @@
 [
     {
-        "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "/workspaces/abbrowser/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
-    },
-    {
-        "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/drawable_url_input_bg.xml.flat",
-        "source": "/workspaces/abbrowser/app/src/main/res/drawable/url_input_bg.xml"
-    },
-    {
-        "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/drawable_ic_bookmark.xml.flat",
-        "source": "/workspaces/abbrowser/app/src/main/res/drawable/ic_bookmark.xml"
-    },
-    {
         "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/drawable_dialog_bg.xml.flat",
         "source": "/workspaces/abbrowser/app/src/main/res/drawable/dialog_bg.xml"
     },
@@ -20,24 +8,12 @@
         "source": "/workspaces/abbrowser/app/src/main/res/drawable/tab_count_bg.xml"
     },
     {
-        "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "/workspaces/abbrowser/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
-    },
-    {
-        "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/layout_dialog_tab_item.xml.flat",
-        "source": "/workspaces/abbrowser/app/src/main/res/layout/dialog_tab_item.xml"
-    },
-    {
         "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/drawable_ic_adblock_on.xml.flat",
         "source": "/workspaces/abbrowser/app/src/main/res/drawable/ic_adblock_on.xml"
     },
     {
         "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
         "source": "/workspaces/abbrowser/app/src/main/res/mipmap-mdpi/ic_launcher.png"
-    },
-    {
-        "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/drawable_ic_refresh.xml.flat",
-        "source": "/workspaces/abbrowser/app/src/main/res/drawable/ic_refresh.xml"
     },
     {
         "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/xml_network_security_config.xml.flat",
@@ -56,28 +32,20 @@
         "source": "/workspaces/abbrowser/app/src/main/res/drawable/ic_adblock_off.xml"
     },
     {
-        "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/drawable_ic_search.xml.flat",
-        "source": "/workspaces/abbrowser/app/src/main/res/drawable/ic_search.xml"
+        "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/layout_dialog_proxy.xml.flat",
+        "source": "/workspaces/abbrowser/app/src/main/res/layout/dialog_proxy.xml"
     },
     {
-        "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/drawable_close_btn_bg.xml.flat",
-        "source": "/workspaces/abbrowser/app/src/main/res/drawable/close_btn_bg.xml"
+        "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/drawable_proxy_icon.xml.flat",
+        "source": "/workspaces/abbrowser/app/src/main/res/drawable/proxy_icon.xml"
     },
     {
-        "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "/workspaces/abbrowser/app/src/main/res/mipmap-hdpi/ic_launcher.png"
-    },
-    {
-        "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/drawable_ic_add_tab.xml.flat",
-        "source": "/workspaces/abbrowser/app/src/main/res/drawable/ic_add_tab.xml"
+        "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/drawable_ic_lightning.xml.flat",
+        "source": "/workspaces/abbrowser/app/src/main/res/drawable/ic_lightning.xml"
     },
     {
         "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/drawable_url_edittext_bg.xml.flat",
         "source": "/workspaces/abbrowser/app/src/main/res/drawable/url_edittext_bg.xml"
-    },
-    {
-        "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/drawable_ic_switch_tab.xml.flat",
-        "source": "/workspaces/abbrowser/app/src/main/res/drawable/ic_switch_tab.xml"
     },
     {
         "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher_round.png.flat",
@@ -86,6 +54,50 @@
     {
         "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/drawable_ic_back.xml.flat",
         "source": "/workspaces/abbrowser/app/src/main/res/drawable/ic_back.xml"
+    },
+    {
+        "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/workspaces/abbrowser/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/drawable_url_input_bg.xml.flat",
+        "source": "/workspaces/abbrowser/app/src/main/res/drawable/url_input_bg.xml"
+    },
+    {
+        "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/drawable_ic_bookmark.xml.flat",
+        "source": "/workspaces/abbrowser/app/src/main/res/drawable/ic_bookmark.xml"
+    },
+    {
+        "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/layout_dialog_tab_item.xml.flat",
+        "source": "/workspaces/abbrowser/app/src/main/res/layout/dialog_tab_item.xml"
+    },
+    {
+        "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/workspaces/abbrowser/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/drawable_ic_refresh.xml.flat",
+        "source": "/workspaces/abbrowser/app/src/main/res/drawable/ic_refresh.xml"
+    },
+    {
+        "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/drawable_ic_search.xml.flat",
+        "source": "/workspaces/abbrowser/app/src/main/res/drawable/ic_search.xml"
+    },
+    {
+        "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/drawable_close_btn_bg.xml.flat",
+        "source": "/workspaces/abbrowser/app/src/main/res/drawable/close_btn_bg.xml"
+    },
+    {
+        "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/drawable_ic_add_tab.xml.flat",
+        "source": "/workspaces/abbrowser/app/src/main/res/drawable/ic_add_tab.xml"
+    },
+    {
+        "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/workspaces/abbrowser/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/drawable_ic_switch_tab.xml.flat",
+        "source": "/workspaces/abbrowser/app/src/main/res/drawable/ic_switch_tab.xml"
     },
     {
         "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/drawable_ic_forward.xml.flat",

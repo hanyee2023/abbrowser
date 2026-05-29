@@ -5,12 +5,22 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <!-- 地址栏：左侧 = 代理闪电图标 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="8dp"
         android:background="#2196F3">
+
+        <!-- 代理按钮（小闪电）-->
+        <ImageButton
+            android:id="@+id/btn_proxy"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="8dp"
+            android:src="@drawable/ic_lightning" />
 
         <EditText
             android:id="@+id/urlInput"
@@ -37,6 +47,7 @@
         android:layout_height="0dp"
         android:layout_weight="1" />
 
+    <!-- 底部导航（无重复按钮）-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"
@@ -92,7 +103,6 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1">
-
             <ImageButton
                 android:id="@+id/btn_switch_tab"
                 android:layout_width="match_parent"
@@ -100,7 +110,6 @@
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:padding="8dp"
                 android:src="@drawable/ic_switch_tab" />
-
             <TextView
                 android:id="@+id/tabCount"
                 android:layout_width="18dp"

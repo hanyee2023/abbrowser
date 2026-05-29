@@ -3,46 +3,68 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:gravity="center_horizontal">
 
+    <!-- 历史代理下拉选择 -->
+    <Spinner
+        android:id="@+id/sp_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="选择历史代理"
+        android:spinnerMode="dropdown"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginVertical="8dp"
+        android:background="#eeeeee"/>
+
+    <!-- 代理地址 -->
     <EditText
         android:id="@+id/et_host"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="SOCKS5 地址" />
+        android:hint="代理IP / 域名"
+        android:inputType="text"/>
 
+    <!-- 端口 -->
     <EditText
         android:id="@+id/et_port"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="端口"
-        android:inputType="number" />
+        android:inputType="number"/>
 
+    <!-- 账号 -->
     <EditText
         android:id="@+id/et_user"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="用户名（可选）" />
+        android:hint="账号(选填)"/>
 
+    <!-- 密码 -->
     <EditText
         android:id="@+id/et_pass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="密码（可选）"
-        android:inputType="textPassword" />
+        android:hint="密码(选填)"
+        android:inputType="textPassword"/>
 
-    <Button
-        android:id="@+id/btn_test"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="检测连通性"
-        android:layout_marginTop="8dp"/>
-
+    <!-- 连通检测结果 -->
     <TextView
         android:id="@+id/tv_result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:textSize="14sp"/>
+
+    <!-- 检测按钮 -->
+    <Button
+        android:id="@+id/btn_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="检测连通性"/>
 
 </LinearLayout>

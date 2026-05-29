@@ -1,6 +1,0 @@
-com/abbrowser/app/BuildConfig.java
- com.abbrowser.app.BuildConfig
-com/abbrowser/app/MainActivity.java
- com.abbrowser.app.MainActivity
- com.abbrowser.app.MainActivity$1
- com.abbrowser.app.MainActivity$TabAdapter

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingHorizontal="@dimen/item_padding">
+
+    <TextView
+        android:id="@+id/tvTabTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@color/text_normal"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tvClose"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@drawable/close_btn_bg"
+        android:gravity="center"
+        android:text="×"
+        android:textColor="@color/close_text"
+        android:textSize="18sp" />
+
+</LinearLayout>

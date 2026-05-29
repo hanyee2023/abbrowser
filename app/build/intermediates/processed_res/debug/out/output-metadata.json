@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 2,
   "artifactType": {
     "type": "PROCESSED_RES",
     "kind": "Directory"
@@ -10,11 +10,9 @@
     {
       "type": "SINGLE",
       "filters": [],
-      "attributes": [],
-      "versionCode": 111,
-      "versionName": "V1.1.1",
+      "versionCode": 112,
+      "versionName": "V1.1.2",
       "outputFile": "resources-debug.ap_"
     }
-  ],
-  "elementType": "File"
+  ]
 }

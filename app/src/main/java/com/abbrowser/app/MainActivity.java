@@ -1,14 +1,25 @@
 package com.abbrowser.app;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.*;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.FrameLayout;
+import android.widget.ImageButton;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -20,23 +31,21 @@ public class MainActivity extends AppCompatActivity {
     private FrameLayout webViewContainer;
     private List<WebView> tabList = new ArrayList<>();
     private int currentTabIndex = 0;
+    private AlertDialog tabDialog; // 保存弹窗引用
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // 初始化控件
         urlInput = findViewById(R.id.urlInput);
         webViewContainer = findViewById(R.id.webview_container);
         ImageButton btnBookmark = findViewById(R.id.btn_bookmark);
         ImageButton btnNewTab = findViewById(R.id.btn_new_tab);
         ImageButton btnSwitchTab = findViewById(R.id.btn_switch_tab);
 
-        // 创建第一个标签
         createNewTab();
 
-        // 顶部栏其他按钮
         ImageButton goBtn = findViewById(R.id.goBtn);
         ImageButton btnBack = findViewById(R.id.btn_back);
         ImageButton btnForward = findViewById(R.id.btn_forward);
@@ -48,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
             if (text.startsWith("http://") || text.startsWith("https://")) {
                 getCurrentWebView().loadUrl(text);
             } else {
-                getCurrentWebView().loadUrl("https://www.baidu.com/s?wd=" + text);
+                getCurrentWebView().loadUrl("https://cn.bing.com/search?q=" + text);
             }
         });
 
@@ -64,23 +73,11 @@ public class MainActivity extends AppCompatActivity {
             getCurrentWebView().reload();
         });
 
-        // 修复：书签按钮点击事件
-        btnBookmark.setOnClickListener(v -> {
-            showBookmarkDialog();
-        });
-
-        // 新建标签按钮
-        btnNewTab.setOnClickListener(v -> {
-            createNewTab();
-        });
-
-        // 【新增】切换标签按钮点击事件
-        btnSwitchTab.setOnClickListener(v -> {
-            showTabSwitchDialog();
-        });
+        btnBookmark.setOnClickListener(v -> showBookmarkDialog());
+        btnNewTab.setOnClickListener(v -> createNewTab());
+        btnSwitchTab.setOnClickListener(v -> showTabSwitchDialog());
     }
 
-    // 创建新标签
     private void createNewTab() {
         WebView newWebView = new WebView(this);
         WebSettings settings = newWebView.getSettings();
@@ -91,8 +88,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 if (url.startsWith("baiduboxapp://")) {
-                    String real = url.replace("baiduboxapp://", "https://");
-                    view.loadUrl(real);
+                    String realUrl = url.replace("baiduboxapp://", "https://");
+                    view.loadUrl(realUrl);
                     return true;
                 }
                 view.loadUrl(url);
@@ -107,62 +104,102 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // 加载空白页
         newWebView.loadUrl("about:blank");
         urlInput.setText("");
 
-        // 加入列表并切换到新标签
         tabList.add(newWebView);
         currentTabIndex = tabList.size() - 1;
-
-        // 【关键修复】显示当前标签的WebView
         showCurrentTab();
     }
 
-    // 显示当前标签（解决覆盖问题）
     private void showCurrentTab() {
         webViewContainer.removeAllViews();
         webViewContainer.addView(getCurrentWebView());
     }
 
-    // 获取当前WebView
     private WebView getCurrentWebView() {
         return tabList.get(currentTabIndex);
     }
 
-    // 【新增】标签切换对话框
-    private void showTabSwitchDialog() {
-        String[] tabTitles = new String[tabList.size()];
-        for (int i = 0; i < tabList.size(); i++) {
-            String url = tabList.get(i).getUrl();
-            if (url == null || url.equals("about:blank")) {
-                tabTitles[i] = "标签 " + (i + 1) + " (空白)";
-            } else {
-                tabTitles[i] = "标签 " + (i + 1) + ": " + url;
-            }
+    private String getTabDisplayName(int index) {
+        WebView webView = tabList.get(index);
+        String url = webView.getUrl();
+        if (url == null || url.equals("about:blank")) {
+            return "标签 " + (index + 1) + " (空白页)";
         }
-
-        new AlertDialog.Builder(this)
-                .setTitle("切换标签")
-                .setItems(tabTitles, (dialog, which) -> {
-                    currentTabIndex = which;
-                    showCurrentTab();
-                    // 更新地址栏
-                    String url = getCurrentWebView().getUrl();
-                    if (url != null && !url.equals("about:blank")) {
-                        urlInput.setText(url);
-                    } else {
-                        urlInput.setText("");
-                    }
-                    dialog.dismiss();
-                })
-                .setNegativeButton("关闭", null)
-                .show();
+        if (url.startsWith("https://")) url = url.substring(8);
+        if (url.startsWith("http://")) url = url.substring(7);
+        if (url.contains("/")) url = url.split("/")[0];
+        return "标签 " + (index + 1) + ": " + url;
     }
 
-    // 【修复】完整的书签对话框逻辑
+    // 标签弹窗：支持切换 + 关闭标签
+    private void showTabSwitchDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("标签管理（共" + tabList.size() + "个）");
+
+        ListView listView = new ListView(this);
+        TabAdapter tabAdapter = new TabAdapter(this, tabList);
+        listView.setAdapter(tabAdapter);
+        builder.setView(listView);
+
+        tabDialog = builder.create();
+        tabDialog.show();
+    }
+
+    class TabAdapter extends ArrayAdapter<WebView> {
+        private final Context context;
+        private final List<WebView> tabs;
+
+        public TabAdapter(Context context, List<WebView> tabs) {
+            super(context, R.layout.dialog_tab_item, tabs);
+            this.context = context;
+            this.tabs = tabs;
+        }
+
+        @Override
+        public View getView(final int position, View convertView, ViewGroup parent) {
+            if (convertView == null) {
+                convertView = LayoutInflater.from(context).inflate(R.layout.dialog_tab_item, parent, false);
+            }
+
+            TextView tvTitle = convertView.findViewById(R.id.tvTabTitle);
+            TextView tvClose = convertView.findViewById(R.id.tvClose);
+
+            tvTitle.setText(getTabDisplayName(position));
+
+            // 切换标签
+            convertView.setOnClickListener(v -> {
+                currentTabIndex = position;
+                showCurrentTab();
+                String url = getCurrentWebView().getUrl();
+                urlInput.setText(url == null || url.equals("about:blank") ? "" : url);
+                if (tabDialog != null) {
+                    tabDialog.dismiss();
+                }
+            });
+
+            // 关闭标签
+            tvClose.setOnClickListener(v -> {
+                if (tabs.size() <= 1) {
+                    Toast.makeText(context, "至少保留一个标签", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                tabs.remove(position);
+                // 修正当前下标
+                if (currentTabIndex >= tabs.size()) {
+                    currentTabIndex = tabs.size() - 1;
+                }
+                showCurrentTab();
+                notifyDataSetChanged();
+            });
+
+            return convertView;
+        }
+    }
+
     private void showBookmarkDialog() {
-        List<Map<String,String>> bookmarkData = new ArrayList<>();
+        List<Map<String, String>> bookmarkData = new ArrayList<>();
         SharedPreferences sp = getSharedPreferences("bookmarks", MODE_PRIVATE);
         String json = sp.getString("list", "");
         if (json != null && !json.isEmpty()) {
@@ -170,7 +207,7 @@ public class MainActivity extends AppCompatActivity {
             for (String item : items) {
                 String[] parts = item.split("\\|");
                 if (parts.length == 2) {
-                    Map<String,String> map = new HashMap<>();
+                    Map<String, String> map = new HashMap<>();
                     map.put("title", parts[0]);
                     map.put("url", parts[1]);
                     bookmarkData.add(map);
@@ -185,7 +222,6 @@ public class MainActivity extends AppCompatActivity {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("书签管理");
-
         if (titles.length > 0) {
             builder.setItems(titles, (dialog, which) -> {
                 String url = bookmarkData.get(which).get("url");
@@ -195,17 +231,14 @@ public class MainActivity extends AppCompatActivity {
         } else {
             builder.setMessage("暂无书签");
         }
-
         builder.setPositiveButton("添加当前页", (dialog, which) -> {
             addCurrentPageToBookmark();
             dialog.dismiss();
         });
-
         builder.setNegativeButton("关闭", null);
         builder.show();
     }
 
-    // 添加当前页到书签
     private void addCurrentPageToBookmark() {
         WebView webView = getCurrentWebView();
         String url = webView.getUrl();
@@ -214,14 +247,12 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "空白页无法添加书签", Toast.LENGTH_SHORT).show();
             return;
         }
-
         SharedPreferences sp = getSharedPreferences("bookmarks", MODE_PRIVATE);
         String json = sp.getString("list", "");
         String newItem = title + "|" + url;
         if (json.isEmpty()) json = newItem;
         else json += "@@" + newItem;
         sp.edit().putString("list", json).apply();
-
         Toast.makeText(this, "已添加书签", Toast.LENGTH_SHORT).show();
     }
 

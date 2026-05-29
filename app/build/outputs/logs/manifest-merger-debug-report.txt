@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /workspaces/abbrowser/app/src/main/AndroidManifest.xml:2:1-24:12
-INJECTED from /workspaces/abbrowser/app/src/main/AndroidManifest.xml:2:1-24:12
-INJECTED from /workspaces/abbrowser/app/src/main/AndroidManifest.xml:2:1-24:12
-INJECTED from /workspaces/abbrowser/app/src/main/AndroidManifest.xml:2:1-24:12
+ADDED from /workspaces/abbrowser/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /workspaces/abbrowser/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /workspaces/abbrowser/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /workspaces/abbrowser/app/src/main/AndroidManifest.xml:2:1-27:12
 MERGED from [com.google.android.material:material:1.9.0] /home/codespace/.gradle/caches/transforms-3/6df35e10b48a7af57277b9eb373d3ded/transformed/material-1.9.0/AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/codespace/.gradle/caches/transforms-3/05034a6d027c1e605b047c94d2cdff34/transformed/constraintlayout-2.1.4/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /home/codespace/.gradle/caches/transforms-3/5d00d21cc436dc42e14b652126b4b9f5/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:17:1-22:12
@@ -59,8 +59,8 @@ ADDED from /workspaces/abbrowser/app/src/main/AndroidManifest.xml:5:5-67
 	android:name
 		ADDED from /workspaces/abbrowser/app/src/main/AndroidManifest.xml:5:22-64
 application
-ADDED from /workspaces/abbrowser/app/src/main/AndroidManifest.xml:7:5-22:19
-INJECTED from /workspaces/abbrowser/app/src/main/AndroidManifest.xml:7:5-22:19
+ADDED from /workspaces/abbrowser/app/src/main/AndroidManifest.xml:7:5-25:19
+INJECTED from /workspaces/abbrowser/app/src/main/AndroidManifest.xml:7:5-25:19
 MERGED from [com.google.android.material:material:1.9.0] /home/codespace/.gradle/caches/transforms-3/6df35e10b48a7af57277b9eb373d3ded/transformed/material-1.9.0/AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.9.0] /home/codespace/.gradle/caches/transforms-3/6df35e10b48a7af57277b9eb373d3ded/transformed/material-1.9.0/AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/codespace/.gradle/caches/transforms-3/05034a6d027c1e605b047c94d2cdff34/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
@@ -91,22 +91,24 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/codes
 		ADDED from /workspaces/abbrowser/app/src/main/AndroidManifest.xml:8:9-35
 	android:theme
 		ADDED from /workspaces/abbrowser/app/src/main/AndroidManifest.xml:13:9-47
+	android:usesCleartextTraffic
+		ADDED from /workspaces/abbrowser/app/src/main/AndroidManifest.xml:14:9-44
 activity#com.abbrowser.app.MainActivity
-ADDED from /workspaces/abbrowser/app/src/main/AndroidManifest.xml:14:9-21:20
+ADDED from /workspaces/abbrowser/app/src/main/AndroidManifest.xml:16:9-23:20
 	android:exported
-		ADDED from /workspaces/abbrowser/app/src/main/AndroidManifest.xml:16:13-36
+		ADDED from /workspaces/abbrowser/app/src/main/AndroidManifest.xml:18:13-36
 	android:name
-		ADDED from /workspaces/abbrowser/app/src/main/AndroidManifest.xml:15:13-41
+		ADDED from /workspaces/abbrowser/app/src/main/AndroidManifest.xml:17:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /workspaces/abbrowser/app/src/main/AndroidManifest.xml:17:13-20:29
+ADDED from /workspaces/abbrowser/app/src/main/AndroidManifest.xml:19:13-22:29
 action#android.intent.action.MAIN
-ADDED from /workspaces/abbrowser/app/src/main/AndroidManifest.xml:18:17-69
+ADDED from /workspaces/abbrowser/app/src/main/AndroidManifest.xml:20:17-69
 	android:name
-		ADDED from /workspaces/abbrowser/app/src/main/AndroidManifest.xml:18:25-66
+		ADDED from /workspaces/abbrowser/app/src/main/AndroidManifest.xml:20:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /workspaces/abbrowser/app/src/main/AndroidManifest.xml:19:17-77
+ADDED from /workspaces/abbrowser/app/src/main/AndroidManifest.xml:21:17-77
 	android:name
-		ADDED from /workspaces/abbrowser/app/src/main/AndroidManifest.xml:19:27-74
+		ADDED from /workspaces/abbrowser/app/src/main/AndroidManifest.xml:21:27-74
 uses-sdk
 INJECTED from /workspaces/abbrowser/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /workspaces/abbrowser/app/src/main/AndroidManifest.xml

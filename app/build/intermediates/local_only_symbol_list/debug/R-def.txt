@@ -3,6 +3,10 @@ local
 color design_default_color_accent
 color design_default_color_primary
 color design_default_color_primary_dark
+drawable url_input_bg
+id btn_back
+id btn_forward
+id btn_refresh
 id goBtn
 id urlInput
 id webView

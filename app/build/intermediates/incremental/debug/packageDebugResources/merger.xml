@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/workspaces/abbrowser/app/src/main/res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main" generated-set="main$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/workspaces/abbrowser/app/src/main/res"><file name="ic_launcher" path="/workspaces/abbrowser/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" qualifiers="xxxhdpi-v4" type="mipmap"/><file path="/workspaces/abbrowser/app/src/main/res/values/styles.xml" qualifiers=""><style name="Theme.ABBrowser" parent="Theme.MaterialComponents.Light.NoActionBar">
+<merger version="3"><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/workspaces/abbrowser/app/src/main/res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main" generated-set="main$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/workspaces/abbrowser/app/src/main/res"><file name="ic_launcher" path="/workspaces/abbrowser/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" qualifiers="xxxhdpi-v4" type="mipmap"/><file path="/workspaces/abbrowser/app/src/main/res/values/arrays.xml" qualifiers=""><string-array name="adBlockUrl">
+        <item>googleads</item>
+        <item>doubleclick</item>
+        <item>adwords</item>
+        <item>adsense</item>
+        <item>baidu.com/ad</item>
+        <item>tanx.com</item>
+        <item>sspai.com/ad</item>
+        <item>popad</item>
+        <item>ad-popup</item>
+    </string-array></file><file path="/workspaces/abbrowser/app/src/main/res/values/styles.xml" qualifiers=""><style name="Theme.ABBrowser" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@color/design_default_color_primary</item>
         <item name="colorPrimaryDark">@color/design_default_color_primary_dark</item>
         <item name="colorAccent">@color/design_default_color_accent</item>

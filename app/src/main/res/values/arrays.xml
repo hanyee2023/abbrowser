@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="adBlockUrl">
+        <item>googleads</item>
+        <item>doubleclick</item>
+        <item>adwords</item>
+        <item>adsense</item>
+        <item>baidu.com/ad</item>
+        <item>tanx.com</item>
+        <item>sspai.com/ad</item>
+        <item>popad</item>
+        <item>ad-popup</item>
+    </string-array>
+</resources>

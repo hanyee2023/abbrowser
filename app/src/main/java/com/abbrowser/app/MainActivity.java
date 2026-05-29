@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebResourceResponse;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -21,9 +23,11 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,7 +35,13 @@ public class MainActivity extends AppCompatActivity {
     private FrameLayout webViewContainer;
     private List<WebView> tabList = new ArrayList<>();
     private int currentTabIndex = 0;
-    private AlertDialog tabDialog; // 保存弹窗引用
+    private AlertDialog tabDialog;
+
+    // 广告拦截域名黑名单
+    private static final Set<String> AD_HOSTS = new HashSet<>(Arrays.asList(
+            "ad.", "ads.", "advert.", "adserver.", "doubleclick.net",
+            "googleadservices.com", "baidu.com/ad", "tanx.com", "youku.com/ad"
+    ));
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
         settings.setJavaScriptEnabled(true);
         settings.setDomStorageEnabled(true);
 
+        // 带广告拦截的 WebViewClient
         newWebView.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
@@ -97,10 +108,28 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
+            public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request) {
+                String url = request.getUrl().toString().toLowerCase();
+                // 拦截广告资源
+                for (String ad : AD_HOSTS) {
+                    if (url.contains(ad)) {
+                        // 返回空响应，阻止加载
+                        return new WebResourceResponse(null, null, null);
+                    }
+                }
+                return super.shouldInterceptRequest(view, request);
+            }
+
+            @Override
             public void onPageFinished(WebView view, String url) {
                 if (!url.equals("about:blank")) {
                     urlInput.setText(url);
                 }
+                // 注入 JS 移除页面内广告元素
+                view.evaluateJavascript("javascript:(function(){" +
+                        "var ads = document.querySelectorAll('div[class*=\"ad\"], div[id*=\"ad\"], .ads, .advert');" +
+                        "for(var i=0;i<ads.length;i++) ads[i].remove();" +
+                        "})()", null);
             }
         });
 
@@ -133,7 +162,6 @@ public class MainActivity extends AppCompatActivity {
         return "标签 " + (index + 1) + ": " + url;
     }
 
-    // 标签弹窗：支持切换 + 关闭标签
     private void showTabSwitchDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("标签管理（共" + tabList.size() + "个）");
@@ -168,7 +196,6 @@ public class MainActivity extends AppCompatActivity {
 
             tvTitle.setText(getTabDisplayName(position));
 
-            // 切换标签
             convertView.setOnClickListener(v -> {
                 currentTabIndex = position;
                 showCurrentTab();
@@ -179,14 +206,12 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
-            // 关闭标签
             tvClose.setOnClickListener(v -> {
                 if (tabs.size() <= 1) {
                     Toast.makeText(context, "至少保留一个标签", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 tabs.remove(position);
-                // 修正当前下标
                 if (currentTabIndex >= tabs.size()) {
                     currentTabIndex = tabs.size() - 1;
                 }
@@ -207,7 +232,7 @@ public class MainActivity extends AppCompatActivity {
             for (String item : items) {
                 String[] parts = item.split("\\|");
                 if (parts.length == 2) {
-                    Map<String, String> map = new HashMap<>();
+                    Map<String, String> map = new java.util.HashMap<>();
                     map.put("title", parts[0]);
                     map.put("url", parts[1]);
                     bookmarkData.add(map);

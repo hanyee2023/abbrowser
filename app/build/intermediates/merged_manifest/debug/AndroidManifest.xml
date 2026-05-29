@@ -15,13 +15,13 @@
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="ABBrowser V1.1.2"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
-        <activity
-            android:name="com.abbrowser.app.MainActivity"
-            android:exported="true" >
+        android:theme="@style/AppTheme" > <!-- 这就是你要加的那一行 -->
+
+        <activity android:name="com.abbrowser.app.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

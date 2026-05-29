@@ -1,91 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <!-- 顶部工具栏 统一样式 -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/toolbar_height"
-        android:background="@color/toolbar_bg"
-        android:gravity="center_vertical"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingHorizontal="@dimen/spacing_normal">
-
-        <ImageButton
-            android:id="@+id/btn_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/button_padding"
-            android:src="@drawable/ic_back"
-            android:background="?attr/selectableItemBackgroundBorderless" />
-
-        <ImageButton
-            android:id="@+id/btn_forward"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/button_padding"
-            android:src="@drawable/ic_forward"
-            android:background="?attr/selectableItemBackgroundBorderless" />
-
-        <ImageButton
-            android:id="@+id/btn_refresh"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/button_padding"
-            android:src="@drawable/ic_refresh"
-            android:background="?attr/selectableItemBackgroundBorderless" />
+        android:padding="8dp"
+        android:background="#2196F3">
 
         <EditText
             android:id="@+id/urlInput"
             android:layout_width="0dp"
-            android:layout_height="36dp"
+            android:layout_height="40dp"
             android:layout_weight="1"
-            android:layout_marginHorizontal="@dimen/spacing_normal"
-            android:background="@drawable/url_input_bg"
-            android:hint="输入网址或关键词"
-            android:paddingHorizontal="@dimen/item_padding"
-            android:singleLine="true" />
+            android:hint="输入网址或搜索"
+            android:background="@drawable/url_edittext_bg"
+            android:paddingHorizontal="12dp" />
 
         <ImageButton
-            android:id="@+id/goBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/button_padding"
-            android:src="@drawable/ic_search"
-            android:background="?attr/selectableItemBackgroundBorderless" />
-
-        <ImageButton
-            android:id="@+id/btn_bookmark"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/button_padding"
-            android:src="@drawable/ic_bookmark"
-            android:background="?attr/selectableItemBackgroundBorderless" />
-
-        <ImageButton
-            android:id="@+id/btn_new_tab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/button_padding"
-            android:src="@drawable/ic_add_tab"
-            android:background="?attr/selectableItemBackgroundBorderless" />
-
-        <ImageButton
-            android:id="@+id/btn_switch_tab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/button_padding"
-            android:src="@drawable/ic_switch_tab"
-            android:background="?attr/selectableItemBackgroundBorderless" />
-
+            android:id="@+id/btnAdBlock"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="8dp"
+            android:src="@drawable/ic_adblock_on" />
     </LinearLayout>
 
-    <!-- WebView 容器 -->
     <FrameLayout
         android:id="@+id/webview_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:background="#2196F3">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="8dp"
+            android:src="@drawable/ic_back" />
+
+        <ImageButton
+            android:id="@+id/btn_forward"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="8dp"
+            android:src="@drawable/ic_forward" />
+
+        <ImageButton
+            android:id="@+id/btn_refresh"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="8dp"
+            android:src="@drawable/ic_refresh" />
+
+        <ImageButton
+            android:id="@+id/btn_bookmark"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="8dp"
+            android:src="@drawable/ic_bookmark" />
+
+        <ImageButton
+            android:id="@+id/btn_new_tab"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="8dp"
+            android:src="@drawable/ic_add_tab" />
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageButton
+                android:id="@+id/btn_switch_tab"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="8dp"
+                android:src="@drawable/ic_switch_tab" />
+
+            <TextView
+                android:id="@+id/tabCount"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_gravity="top|end"
+                android:layout_margin="4dp"
+                android:background="@drawable/tab_count_bg"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp"
+                android:gravity="center" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/adBlockTip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#CC000000"
+        android:padding="8dp"
+        android:text="已拦截广告"
+        android:textColor="#FFFFFF"
+        android:visibility="gone" />
 
 </LinearLayout>

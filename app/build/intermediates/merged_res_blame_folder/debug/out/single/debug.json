@@ -12,12 +12,24 @@
         "source": "/workspaces/abbrowser/app/src/main/res/drawable/ic_bookmark.xml"
     },
     {
+        "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/drawable_dialog_bg.xml.flat",
+        "source": "/workspaces/abbrowser/app/src/main/res/drawable/dialog_bg.xml"
+    },
+    {
+        "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/drawable_tab_count_bg.xml.flat",
+        "source": "/workspaces/abbrowser/app/src/main/res/drawable/tab_count_bg.xml"
+    },
+    {
         "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
         "source": "/workspaces/abbrowser/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
     },
     {
         "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/layout_dialog_tab_item.xml.flat",
         "source": "/workspaces/abbrowser/app/src/main/res/layout/dialog_tab_item.xml"
+    },
+    {
+        "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/drawable_ic_adblock_on.xml.flat",
+        "source": "/workspaces/abbrowser/app/src/main/res/drawable/ic_adblock_on.xml"
     },
     {
         "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
@@ -28,12 +40,20 @@
         "source": "/workspaces/abbrowser/app/src/main/res/drawable/ic_refresh.xml"
     },
     {
+        "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/xml_network_security_config.xml.flat",
+        "source": "/workspaces/abbrowser/app/src/main/res/xml/network_security_config.xml"
+    },
+    {
         "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/layout_activity_main.xml.flat",
         "source": "/workspaces/abbrowser/app/src/main/res/layout/activity_main.xml"
     },
     {
         "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "/workspaces/abbrowser/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/drawable_ic_adblock_off.xml.flat",
+        "source": "/workspaces/abbrowser/app/src/main/res/drawable/ic_adblock_off.xml"
     },
     {
         "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/drawable_ic_search.xml.flat",
@@ -50,6 +70,10 @@
     {
         "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/drawable_ic_add_tab.xml.flat",
         "source": "/workspaces/abbrowser/app/src/main/res/drawable/ic_add_tab.xml"
+    },
+    {
+        "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/drawable_url_edittext_bg.xml.flat",
+        "source": "/workspaces/abbrowser/app/src/main/res/drawable/url_edittext_bg.xml"
     },
     {
         "merged": "/workspaces/abbrowser/app/build/intermediates/res/merged/debug/drawable_ic_switch_tab.xml.flat",

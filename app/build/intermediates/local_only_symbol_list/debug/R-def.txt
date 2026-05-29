@@ -1,0 +1,12 @@
+R_DEF: Internal format may change without notice
+local
+color design_default_color_accent
+color design_default_color_primary
+color design_default_color_primary_dark
+id goBtn
+id urlInput
+id webView
+layout activity_main
+mipmap ic_launcher
+string app_name
+style Theme.ABBrowser

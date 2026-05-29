@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="design_default_color_accent">#FF4081</color>
+    <color name="design_default_color_primary">#2196F3</color>
+    <color name="design_default_color_primary_dark">#1976D2</color>
+    <string name="app_name">AB浏览器</string>
+    <style name="Theme.ABBrowser" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/design_default_color_primary</item>
+        <item name="colorPrimaryDark">@color/design_default_color_primary_dark</item>
+        <item name="colorAccent">@color/design_default_color_accent</item>
+    </style>
+</resources>

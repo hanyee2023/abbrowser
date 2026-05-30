@@ -4,14 +4,17 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="16dp">
+
     <EditText
         android:id="@+id/et_bookmark_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="书签名称"/>
+        android:hint="书签显示名称" />
+
     <EditText
         android:id="@+id/et_bookmark_url"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="网址"/>
+        android:hint="网址" />
+
 </LinearLayout>
